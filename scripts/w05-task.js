@@ -1,12 +1,9 @@
-// Step 1
-const templesElement = document.getElementById("temples");
 
-// Step 2
+const templesElement = document.getElementById("temples");
 let templeList = [];
 
-// Step 3
 const displayTemples = (temples) => {
- // templesElement.innerHTML = ""; // Clear the previous content
+
 
   temples.forEach((temple) => {
     const article = document.createElement("article");
@@ -22,7 +19,6 @@ const displayTemples = (temples) => {
   });
 };
 
-/* async getTemples Function using fetch()*/
 const getTemples = async () => {
     const response = (await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json"));
     const data = await response.json();
@@ -30,17 +26,17 @@ const getTemples = async () => {
     displayTemples(templeList);
 }
 
-// Call the getTemples function to fetch and display temple data
+
 getTemples();
 
-// Step 5
+
 const reset = () => {
-  templesElement.innerHTML = ""; // Clear all the temple cards
+  templesElement.innerHTML = ""; 
 };
 
-// Step 6
+
 const sortBy = (temples) => {
-  reset(); // Clear the displayed list of temples
+  reset(); 
   const filter = document.querySelector("#sortBy").value;
 
   switch (filter) {
@@ -59,7 +55,7 @@ const sortBy = (temples) => {
   }
 };
 
-// Step 7
+
 document.querySelector("#sortBy").addEventListener("change", () => {
   sortBy(templeList);
 });
